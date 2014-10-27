@@ -124,8 +124,9 @@ Markets.cc
 Moneychanger.cc
 
 # Qt Creator .pro files
-project-Qt/
+#project-Qt/
 build-OpenTransactions*
+build-Open*Transactions*
 
 # KDE Dolphin (file manager) noise
 .directory

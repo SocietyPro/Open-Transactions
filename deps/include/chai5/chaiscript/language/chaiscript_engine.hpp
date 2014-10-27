@@ -17,6 +17,10 @@
 #include <unistd.h>
 #endif
 
+#ifdef UNICODE
+	#define _UNICODE
+#endif
+
 #ifdef _POSIX_VERSION
 #include <dlfcn.h>
 #else

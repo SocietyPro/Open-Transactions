@@ -6,7 +6,11 @@
 #ifdef _MSC_VER
 //#include "ot_msvc.h"
 #else
-#include "ot_config.h"
+	#ifdef __MINGW32__
+	//#include "ot_config.h"
+	# else
+	//#include "ot_config.h"
+	#endif
 #endif
 
 #include "OTCommon.hpp"

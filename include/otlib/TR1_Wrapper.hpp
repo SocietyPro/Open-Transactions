@@ -4,7 +4,9 @@
 #ifdef _MSC_VER
 //#include "ot_msvc.h"
 #else
+#if !defined(__MINGW32__)
 #include "ot_config.h"
+#endif
 #endif
 
 //  C++ Defines.

@@ -60,7 +60,7 @@ public:
 		if (!File)
 			return 0;
 
-#ifdef _WIN32 // dest buf, dest size, element size, count, file
+#if defined(_WIN32) && !defined(__MINGW32__) // dest buf, dest size, element size, count, file
 		return (int)fread_s(buffer, sizeToRead+1, 1, sizeToRead, File);
 #else
 		return (int)fread(buffer, 1, sizeToRead, File);

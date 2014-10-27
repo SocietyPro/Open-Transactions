@@ -1281,7 +1281,10 @@ void   LogStackFrames(void *FaultAdress, char *eNextBP)
 
 	if(! eNextBP)
 	{
+		#if !defined(__MINGW32__)
 		_asm mov     eNextBP, eBp
+		#endif
+
 	}
 	else
 		fprintf(stderr, "\n  Fault Occured At $ADDRESS:%08LX\n", (int32_t)FaultAdress);

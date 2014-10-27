@@ -49,16 +49,6 @@
 #include <Mstcpip.h>
 #endif
 
-//  Workaround missing Mstcpip.h in mingw32
-#if defined __MINGW32__ && !defined SIO_KEEPALIVE_VALS
-struct tcp_keepalive {
-    u_long onoff;
-    u_long keepalivetime;
-    u_long keepaliveinterval;
-};
-#define SIO_KEEPALIVE_VALS _WSAIOW(IOC_VENDOR,4)
-#endif
-
 #include <ws2tcpip.h>
 #include <ipexport.h>
 #if !defined _WIN32_WCE
