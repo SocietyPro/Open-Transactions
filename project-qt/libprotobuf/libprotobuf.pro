@@ -54,6 +54,7 @@ unix {
     INSTALLS += target
 }
 
+INCLUDEPATH += ../../../protobuf-2.5.0-win32/vsprojects/include
 INCLUDEPATH += ../../../protobuf-2.5.0-win32/src/
 INCLUDEPATH += ../../../protobuf-2.5.0-win32/src/google/protobuf/
 INCLUDEPATH += ../../../protobuf-2.5.0-win32/src/google/protobuf/compiler

@@ -211,8 +211,8 @@ HEADERS +=\
 	../../include/otlib/stdafx.h \
 	../../include/otlib/stdafx.hpp \
 	../../include/otlib/TR1_Wrapper.hpp \
-	../../include/otlib/win32_utf8conv.hpp \
-	../../include/otlib/win32_utf8conv_inl.hpp \
+	../../include/otbin/Win32_utf8conv.hpp \
+	../../include/otbin/Win32_utf8conv_inl.hpp \
 	../../include/otlib/WinsockWrapper.h
 
 unix {
@@ -228,49 +228,50 @@ INCLUDEPATH += ../../include/otlib
 INCLUDEPATH += ../../include
 INCLUDEPATH += ../../include/zlib
 INCLUDEPATH += ../../../OpenSSL-Win32/include
+INCLUDEPATH += ../../../protobuf-2.5.0-win32/vsprojects/include
 
 CONFIG += c++11
 
 # ZLIB
-win32:CONFIG(release, debug|release):    LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lzlib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lzlib
+win32:CONFIG(release, debug|release):    LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lzlib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lzlib
 
 INCLUDEPATH += $$PWD/../zlib
 DEPENDPATH += $$PWD/../zlib
 
 # LIB PROTOBUUF
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -llibprotobuf
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -llibprotobuf
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -llibprotobuf
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -llibprotobuf
 else:unix: LIBS += -L$$OUT_PWD/../../lib/ -llibprotobuf
 
 INCLUDEPATH += $$PWD/../libprotobuf
 DEPENDPATH += $$PWD/../libprotobuf
 
 # Lib IRRXML
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lirrxml
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lirrxml
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lirrxml
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lirrxml
 else:unix: LIBS += -L$$OUT_PWD/../../lib/ -lirrxml
 
 INCLUDEPATH += $$PWD/../irrxml
 DEPENDPATH += $$PWD/../irrxml
 
 # Lib BIGINT
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lbigint
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lbigint
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lbigint
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lbigint
 
 INCLUDEPATH += $$PWD/../bigint
 DEPENDPATH += $$PWD/../bigint
 
 # Lib CHAISCRIPT
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lchaiscript_stdlib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lchaiscript_stdlib
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lchaiscript_stdlib
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lchaiscript_stdlib
 
 INCLUDEPATH += $$PWD/../chaiscript
 DEPENDPATH += $$PWD/../chaiscript
 
 # Lib LUCRE
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -llucre
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -llucre
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -llucre
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -llucre
 
 INCLUDEPATH += $$PWD/../lucre
 DEPENDPATH += $$PWD/../lucre
@@ -279,8 +280,8 @@ DEPENDPATH += $$PWD/../lucre
 LIBS += -L../../../OpenSSL-Win32/lib/MinGW    -lws2_32 -lwinmm -leay32 -lssleay32
 
 # Lib SIMPLEINI
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lsimpleini
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lsimpleini
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lsimpleini
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lsimpleini
 
 INCLUDEPATH += $$PWD/../simpleini
 DEPENDPATH += $$PWD/../simpleini

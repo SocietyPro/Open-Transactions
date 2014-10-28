@@ -62,34 +62,34 @@ DEPENDPATH += $$PWD/../zlib
 
 
 # otextensions
-win32:CONFIG(release, debug|release):    LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lotextensions
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lotextensions
+win32:CONFIG(release, debug|release):    LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lotextensions
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lotextensions
 else:unix:                               LIBS += -L$$OUT_PWD/../../lib/ -lotextensions
 
 INCLUDEPATH += $$PWD/../otextensions
 DEPENDPATH += $$PWD/../otextensions
 
-win32-g++:CONFIG(release, debug|release):              PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/release/libotextensions.a
-else:win32-g++:CONFIG(debug, debug|release):           PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/debug/libotextensions.a
-else:win32:!win32-g++:CONFIG(release, debug|release):  PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/release/otextensions.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release):    PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/debug/otextensions.lib
+win32-g++:CONFIG(release, debug|release):              PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/release/libotextensions.a
+else:win32-g++:CONFIG(debug, debug|release):           PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/debug/libotextensions.a
+else:win32:!win32-g++:CONFIG(release, debug|release):  PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/release/otextensions.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release):    PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/debug/otextensions.lib
 else:unix:                                             PRE_TARGETDEPS += $$OUT_PWD/../../lib/libotextensions.a
 
 # ws2_32
 LIBS += -lws2_32
 
 # ZMQ
-win32:CONFIG(release, debug|release):    LIBS += -L$$OUT_PWD/../../lib/Win32/release/ -lzmq
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../lib/Win32/debug/ -lzmq
+win32:CONFIG(release, debug|release):    LIBS += -L$$OUT_PWD/../../bin/Win32/release/ -lzmq
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../bin/Win32/debug/ -lzmq
 else:unix:                               LIBS += -L$$OUT_PWD/../../lib/ -lzmq
 
 INCLUDEPATH += $$PWD/../zmq
 DEPENDPATH += $$PWD/../zmq
 
-win32-g++:CONFIG(release, debug|release):             PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/release/libzmq.a
-else:win32-g++:CONFIG(debug, debug|release):          PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/debug/libzmq.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/release/zmq.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release):   PRE_TARGETDEPS += $$OUT_PWD/../../lib/Win32/debug/zmq.lib
+win32-g++:CONFIG(release, debug|release):             PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/release/libzmq.a
+else:win32-g++:CONFIG(debug, debug|release):          PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/debug/libzmq.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/release/zmq.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release):   PRE_TARGETDEPS += $$OUT_PWD/../../bin/Win32/debug/zmq.lib
 else:unix:                                            PRE_TARGETDEPS += $$OUT_PWD/../../lib/libzmq.a
 
 # otlib
